@@ -30,7 +30,7 @@ namespace Assets.Pathfinding
             Start = map.StartNode;
         }
 
-        // Djikstra search as contingency 
+        // Djikstra search as contingency
 
         /*
         public List<Node> GetShortestPathDijkstra()
@@ -85,8 +85,7 @@ namespace Assets.Pathfinding
             BuildShortestPath(list, node.NearestToStart);
         }
 
-        public
-            List<Node> AStarShortPath()
+        public List<Node> AStarShortPath() // Call this one to return the path
         {
             foreach (var node in Map.Nodes)
                 node.StraightLineDistanceToEnd = node.StraightLineDistanceTo(End);
@@ -98,8 +97,7 @@ namespace Assets.Pathfinding
             return ShortestPath;
         }
 
-        private
-        void AStarSearch()
+        private void AStarSearch()
         {
             NodeVisits = 0;
             Start.MinCostToStart = 0;
