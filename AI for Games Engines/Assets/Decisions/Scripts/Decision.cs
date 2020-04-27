@@ -7,36 +7,42 @@ public class Decision : MonoBehaviour
 
     public int age;
 
+    //Needs stats
     public int thirst;
     public int hunger;
     public int toilet;
     public int money;
 
+    //Ride Stats
     public int excitement;
     public int fear;
     public int nausia;
     public int fun;
 
+    //What it will do next
     public string next;
 
 
-    // Start is called before the first frame update
     void Start()
     {
+        //Generates the stats for the currently spawned peep.
         GeneratePeep();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //Runs the decision state machine to decide what to do next.
         Decisions();
+        //Updates the needs on a random choice to make them go down
         Needs();
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
 
-        gameObject.transform.Translate(moveHorizontal * 0.05f, moveVertical * 0.25f, 0.0f);
+        //test movement for collision with buildings and needs before Paul's ai movement has been added.
+        //float moveHorizontal = Input.GetAxis("Horizontal");
+        //float moveVertical = Input.GetAxis("Vertical");
+        //gameObject.transform.Translate(moveHorizontal * 0.05f, moveVertical * 0.25f, 0.0f);
     }
 
+    //generates the stats randomly for each peep
     void GeneratePeep()
     {
         age = Random.Range(10, 100);
@@ -50,7 +56,7 @@ public class Decision : MonoBehaviour
 
     void Decisions()
     {
-        //Needs
+        //Needs decisions tree
         if (money >= 30)
         {
             if (hunger < 30 || thirst < 30 || toilet < 30)
@@ -70,6 +76,7 @@ public class Decision : MonoBehaviour
             }
             else
             {
+                //if needs are fufilled will decide what ride it wants to ride based on the stats
                 if (excitement > 50 && age > 18)
                 {
                     if (fear > 50)
@@ -91,9 +98,11 @@ public class Decision : MonoBehaviour
                 }
             }
         }
+        //will use atm if has no money
         else next = "ATM";
     }
 
+    //Functions to be called by buildings to increase stats
     public void Drink()
     {
         thirst = 100;
@@ -107,6 +116,7 @@ public class Decision : MonoBehaviour
         toilet = 100;
     }
 
+    //randomly ticks needs down to give the appearance of the ai becoming more hungry over time etc
     void Needs()
     {
         int rando = Random.Range(1, 1000);
@@ -118,6 +128,7 @@ public class Decision : MonoBehaviour
         }
     }
 
+    //When collides with buildings with tag will take money and increase stats.
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Drink")
