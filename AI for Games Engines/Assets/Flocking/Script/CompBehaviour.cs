@@ -15,7 +15,7 @@ public class CompBehaviour : FlockingBehavior
         //Exception Throw to handle any data mismatching that may (but shouldn't) occur.
         if (FlockWeights.Length != behaviors.Length)
         {
-            Debug.LogError("Data mismatch" +  name + "Please be an easy fix" , this);
+            Debug.LogError("Data error" +  name, this);
             return Vector2.zero; //Stops the movement of said agent with error.
         }
 

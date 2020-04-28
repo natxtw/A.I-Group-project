@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Flock/Behaviour/SteerTogether")]
-public class SteerTogetherBehavior : FlockingBehavior
+[CreateAssetMenu(menuName = "Flock/Behaviour/SteerCohesionTogether")]
+public class CohesionSteered : FlockingBehavior
 {
     Vector2 CurrentVelocity;
-    public float AgentTransition;
+    public float AgentTransition = 0.5f;
 
     public override Vector2 MovementCalculation(FlockingAgent agent, List<Transform> Neighbours, Flocking Flock)
     {
@@ -21,6 +21,7 @@ public class SteerTogetherBehavior : FlockingBehavior
         {
             MovingTogether += (Vector2)item.position; //Casting it as a Vector2 to stop an error, it needs to be casted or else its too ambigious, remember for other projects.
         }
+
         MovingTogether /= Neighbours.Count; //Averaging out all of the points.
 
         MovingTogether -= (Vector2)agent.transform.position; //sets the offset from agent position.

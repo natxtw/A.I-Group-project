@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: CenterFlockBehaviour
   m_EditorClassIdentifier: 
   behaviors:
-  - {fileID: 11400000, guid: 83b17957e81126244b5e03745bc7c4ec, type: 2}
+  - {fileID: 11400000, guid: ffb4430251b5a6b43a35dc4e891b71af, type: 2}
   - {fileID: 11400000, guid: c4432c56115b67046a62e26705471b7b, type: 2}
   - {fileID: 11400000, guid: 1c3555995d37dce46a29956cd3557813, type: 2}
-  - {fileID: 11400000, guid: a117ab460aa39d147a89054acc3e7d01, type: 2}
   FlockWeights:
   - 1
   - 1
   - 1
-  - 0.1

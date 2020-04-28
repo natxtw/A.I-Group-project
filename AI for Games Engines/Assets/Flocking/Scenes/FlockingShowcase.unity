@@ -235,7 +235,7 @@ MonoBehaviour:
   AgentPrefab: {fileID: 4364360824263603349, guid: fc1ef47c3d9b30741aa366898bc39981,
     type: 3}
   StartingAgentCount: 200
-  behavior: {fileID: 11400000, guid: 5e5f139b7b6f2144eab81399eb7ff3c7, type: 2}
+  behavior: {fileID: 11400000, guid: f419f8d86e703994b82f8121fbcc8266, type: 2}
   Drive: 10
   MaxSpeed: 2
   NeighbourRadius: 3

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: SteerTogetherBehaviour
-  m_EditorClassIdentifier: Assembly-CSharp::SteerTogetherBehavior
-  AgentTransition: 0
+  m_Script: {fileID: 11500000, guid: 0eb3bbc7a135b734aa64a13c4505761a, type: 3}
+  m_Name: CohesionSteeredBehaviour
+  m_EditorClassIdentifier: 
+  AgentTransition: 0.5
